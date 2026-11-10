@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="referrer" content="no-referrer">
+  <title>課堂搶答｜老師端</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div id="offline" class="offline">連線中斷，正在重新連線…</div>
+  <header class="top">
+    <h1>課堂搶答｜老師端</h1>
+    <span id="phase" class="badge"></span>
+    <span class="spacer"></span>
+    <span class="muted" id="summary"></span>
+  </header>
+  <main>
+    <div id="message" class="message" role="status"></div>
+
+    <section class="card">
+      <h2>1. 匯入 Guided Notes</h2>
+      <form id="import-form" class="row">
+        <input id="file" type="file" accept=".xlsx" aria-label="Guided Notes 檔案">
+        <button id="import-btn" type="submit">匯入</button>
+      </form>
+      <p id="file-info" class="muted"></p>
+    </section>
+
+    <section class="card">
+      <h2>2. 組別設定</h2>
+      <form id="group-form" class="row">
+        <label class="row">組別數量
+          <input id="group-count" type="number" min="1" max="20" style="width: 6em">
+        </label>
+        <button id="group-btn" type="submit">套用</button>
+      </form>
+    </section>
+
+    <section class="card">
+      <h2>3. 搶答控制</h2>
+      <div class="row">
+        <button id="open-btn" type="button">開啟搶答</button>
+        <button id="close-btn" type="button" class="danger">結束搶答</button>
+        <button id="export-btn" type="button" class="secondary">匯出答案至 Guided Notes</button>
+        <button id="reset-btn" type="button" class="secondary">重置活動</button>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2 id="board-title">作答狀況</h2>
+      <div id="board" class="table-wrap"></div>
+    </section>
+  </main>
+  <script src="{{ url_for('static', filename='common.js') }}"></script>
+  <script src="{{ url_for('static', filename='teacher.js') }}"></script>
+</body>
+</html>

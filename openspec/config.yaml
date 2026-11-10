@@ -1,0 +1,39 @@
+schema: spec-driven
+
+context: |
+  Language: zh-TW
+  All artifacts must be written in zh-TW.
+  Keep OpenSpec structural headings and SHALL/MUST keywords in English.
+
+  專案：NCU SE6005 2026 軟體工程期末專題「Vibe Coding 課堂搶答系統」（OpenSpec 組）。
+  老師匯入 Guided Notes（填空式學習單），開啟/結束搶答；學生以組別為單位作答，
+  最快送出的組別搶答成功；老師可將成功答案匯出回原 Guided Notes 的填空格。
+  技術約束：
+  - Python 3.12 以上 + Flask（單程序）、原生 HTML/CSS/JavaScript，狀態存於程序記憶體。
+  - Guided Notes 以 .xlsx 交換（Google Sheets 下載/上傳為 xlsx），使用 openpyxl。
+  - 匯入/匯出不可寫死儲存格位置；須依表頭（「題號」「作答」）動態定位，助教會用另一份 Guided Notes 測試。
+  - 僅需本機執行；不得在程式或文件中放入任何密碼、金鑰或機敏資料。
+  - 測試使用 pytest（服務/API）與 Playwright（瀏覽器端到端），另需人工驗證。
+  - 範本位於 samples/（單題、題組）。
+
+# Per-artifact rules (optional)
+# Add custom rules for specific artifacts.
+# Example:
+#   rules:
+#     proposal:
+#       - Keep proposals under 500 words
+#       - Always state what is out of scope
+#     tasks:
+#       - Break tasks into chunks of max 2 hours
+
+# Per-operation guidance (optional)
+# Add advisory guidance for how apply and archive work should be conducted.
+# This is separate from artifact rules above.
+# Example:
+#   operations:
+#     apply:
+#       guidance:
+#         - Keep test summaries concise
+#     archive:
+#       guidance:
+#         - Summarize the archive outcome before finishing

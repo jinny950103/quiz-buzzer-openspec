@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>課堂搶答｜學生端</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div id="offline" class="offline">連線中斷，正在重新連線…</div>
+  <header class="top">
+    <h1>課堂搶答｜學生端</h1>
+    <span id="phase" class="badge"></span>
+    <span class="spacer"></span>
+    <label class="row">組別
+      <select id="group-select" aria-label="選擇組別"></select>
+    </label>
+  </header>
+  <main>
+    <div id="identity" class="muted"></div>
+    <div id="message" class="message" role="status"></div>
+    <section id="content"></section>
+  </main>
+  <script src="{{ url_for('static', filename='common.js') }}"></script>
+  <script src="{{ url_for('static', filename='student.js') }}"></script>
+</body>
+</html>
